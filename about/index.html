@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      文章归档: 2019/12 | 似水流年|ZS blog
+       | 似水流年|ZS blog
     
   </title>
   <meta name="author" content="张帅">
@@ -171,7 +171,7 @@
 	<!-- Page title -->
 	<p>
 		
-			文章归档
+			
 		
 	</p>
 
@@ -266,85 +266,50 @@
 			
 		<!--main-->
 		<main>
-			<!--
-	时间：2018-11-08
-	描述：The archive module refers to 'https://1984n.win/archives-post/' & 'http://1900.live/one-theme/', include js、css. Relevant rights reserved by them! 
--->
-<div class="layout-archive">
-    <div class="i-container">
-        <i class="fa fa-book">
-			<!--
-	Post number counter for archive.ejs.  
--->
+			<!--content start-->
+<div class="layout-page">	
+	<div class="layout-page-container">
+
+		<div class="layout-page-header">
 
 	
-	总计 1 篇 文章
+
+		
+
 	
-
-		</i>
-    </div>
-
-    <!-- Archive by year, display in page( archive ) -->
-    <div id="layout-archive-year" style="display: 
-                 	
-            block">        
-        
-        
-        <ul>
-            
-                <li>
-                    <a href="/2019/12/29/hello-world/">
-            			<em year="2019">
-                            12-29
-                        </em>
-        			    <span itemprop="name">
-                            Hello World
-                        </span>
-        			    
-                    </a>
-                </li>
-            
-        </ul>
-    </div>
-
-     <!-- Archive by month, called by page( categories, tags... ) -->
-    <div id="layout-archive-month" style="display: 
-         
-            none"> 
-        
-
-        
-        
-            
-
-            
-                
-                <h3 class="archive-year">
-                    <!-- <a href="/archives/2019/12"> -->
-                    <a>
-                        2019 - 12
-                    </a>
-                </h3>
-            
-
-            <ul>
-                <li>
-                    <a href="/2019/12/29/hello-world/">
-                        <em>
-                            12-29
-                        </em>
-                        <span itemprop="name">
-                            Hello World
-                        </span>
-                               
-                    </a>
-                </li>
-            </ul>
-        
-    </div>
-
-    
+	
 </div>
+
+		
+
+			<div class="about">
+				<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+			</div>
+
+		
+	</div>
+
+	
+</div>
+
 		</main>
 
 		<!--footer-->
