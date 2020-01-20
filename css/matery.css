@@ -578,17 +578,17 @@ header .go-back i {
 }
 
 .bg-cover .title {
-    font-size: 4rem;
+    font-size: 2.5rem;
     line-height: 1.85em;
     margin-bottom: 20px;
     position: relative;
 }
 
 .bg-cover .description {
-    font-weight: 300;
-    font-size: 1.25rem;
+    font-weight: 175;
+    font-size: 1.5rem;
     line-height: 1.4em;
-    color: #eee;
+    color: #EEFFFF;
 }
 
 .bg-cover .post-title {
