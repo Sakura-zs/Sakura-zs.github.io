@@ -238,6 +238,19 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('芝麻开门')).toString(CryptoJS.enc.Hex)) {
+                alert('别看了哦~');
+                location.href = '/Sakura-zs.github.io/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -547,48 +560,45 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/Sakura-zs.github.io/2020/01/01/2019-nian-du-zong-jie/">
+                <a href="/Sakura-zs.github.io/2020/01/20/gu-fang-zi-shang/">
                     <div class="card-image">
                         
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="孤芳自赏">
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="2019年度总结">
-                        
-                        <span class="card-title">2019年度总结</span>
+                        <span class="card-title">孤芳自赏</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            2019前半年   人总是不免俗，要说一句“2019如白驹过隙，眨眼而逝”，   犹记得在夏天炽热的教室里迷茫与苦累中匍匐前行，   听着“青鸟与诗”，我们向往着远方，向往着诗意，   还记得一句话“我们诗意地栖居在大地上”。   那段日子
+                            成长的经历与故事，在往后有所回忆~
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-20
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/Sakura-zs.github.io/categories/%E6%80%BB%E7%BB%93/" class="post-category">
-                                    总结
+                            <a href="/Sakura-zs.github.io/categories/%E4%B8%AA%E4%BA%BA/" class="post-category">
+                                    个人
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/Sakura-zs.github.io/tags/%E4%B8%AA%E4%BA%BA-%E6%80%BB%E7%BB%93/">
-                        <span class="chip bg-color">个人 - 总结</span>
+                    <a href="/Sakura-zs.github.io/tags/%E4%B8%AA%E4%BA%BA/">
+                        <span class="chip bg-color">个人</span>
                     </a>
                     
                 </div>
@@ -825,7 +835,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">554</span>&nbsp;字
+                class="white-color">3.5k</span>&nbsp;字
             
             
             
