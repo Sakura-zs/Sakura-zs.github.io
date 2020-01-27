@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="gallery, 博客,移动开发,blog">
-    <meta name="description" content="gallery | 似水流年|ZS blog">
+    <meta name="keywords" content="C++函数, 博客,移动开发,blog">
+    <meta name="description" content="在学习c++过程中总结的一些常用函数，并不定期更新">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>gallery | 似水流年|ZS blog</title>
+    <title>C++函数 | 似水流年|ZS blog</title>
     <link rel="icon" type="image/png" href="/-wanjuxiong.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -254,12 +254,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">gallery</h1>
+                    <h1 class="description center-align post-title">C++函数</h1>
                 </div>
             </div>
         </div>
@@ -374,12 +374,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C-%E5%87%BD%E6%95%B0/">
+                                <span class="chip bg-color">C++函数</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/C/" class="post-category">
+                                C++
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -388,21 +401,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-29
+                    2020-01-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-12-29
+                    2020-01-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    52
+                    834
                 </div>
                 
 
@@ -420,7 +433,216 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h3 id="头文件-lt-ctype-gt"><a href="#头文件-lt-ctype-gt" class="headerlink" title="头文件<ctype>"></a><strong>头文件&lt;ctype&gt;</strong></h3><table>
+<thead>
+<tr>
+<th>单字节</th>
+<th>宽字节</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>isalnum</td>
+<td>iswalnum</td>
+<td>是否为数字字母</td>
+</tr>
+<tr>
+<td>isalpha</td>
+<td>iswalpha</td>
+<td>是否为字母</td>
+</tr>
+<tr>
+<td>islower</td>
+<td>iswlower</td>
+<td>是否为小写字母</td>
+</tr>
+<tr>
+<td>isupper</td>
+<td>iswupper</td>
+<td>是否为大写字母</td>
+</tr>
+<tr>
+<td>isdigit</td>
+<td>iswdigit</td>
+<td>是否为数字</td>
+</tr>
+<tr>
+<td>isxdigit</td>
+<td>iswxdigit</td>
+<td>是否为16进制数字</td>
+</tr>
+<tr>
+<td>ispunct</td>
+<td>iswpunct</td>
+<td>是否为标点</td>
+</tr>
+<tr>
+<td>tolower</td>
+<td>towlower</td>
+<td>转换为小写</td>
+</tr>
+<tr>
+<td>toupper</td>
+<td>towupper</td>
+<td>转换为大写</td>
+</tr>
+</tbody></table>
+<hr>
+<hr>
+<h3 id="头文件-lt-stdio-h-gt"><a href="#头文件-lt-stdio-h-gt" class="headerlink" title="头文件<stdio.h>"></a><strong>头文件&lt;stdio.h&gt;</strong></h3><h4 id="sprintf-s-”abcd”-函数"><a href="#sprintf-s-”abcd”-函数" class="headerlink" title="sprintf(s,”abcd”)函数"></a>sprintf(s,”abcd”)函数</h4><blockquote>
+<p>可以将字符串”abcd”输出到字符串s里</p>
+</blockquote>
+<hr>
+<hr>
+<h3 id="头文件-lt-algorithm-gt"><a href="#头文件-lt-algorithm-gt" class="headerlink" title="头文件<algorithm>"></a><strong>头文件&lt;algorithm&gt;</strong></h3><h4 id="find函数"><a href="#find函数" class="headerlink" title="find函数"></a>find函数</h4><pre><code>代码：
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+int main()
+{
+    vector&lt;int&gt; nums={8,7,5,4,2,9,6,1,3,0};
+    cout&lt;&lt;find(nums.begin(),nums.end(),4)-nums.begin();
+}
+输出：3</code></pre><h4 id="reverse-a-a-4-函数"><a href="#reverse-a-a-4-函数" class="headerlink" title="reverse(a,a+4);函数"></a>reverse(a,a+4);函数</h4><blockquote>
+<p>可以将a到a+4之间的数进行反转</p>
+</blockquote>
+<pre><code>代码：
+    int a[10]={10,11,12,13,14,15};
+    reverse(a,a+4);
+
+输出：13,12,11,10,14,15</code></pre><blockquote>
+<p>对于string字符串依然可使用</p>
+</blockquote>
+<pre><code>    string str = "abcdefghi";
+    reverse(str.begin()+2, str.begin()+6);//对a[2]~a[5]逆转*左闭右开*
+输出：abfedcghi</code></pre><h4 id="cmp函数"><a href="#cmp函数" class="headerlink" title="cmp函数"></a>cmp函数</h4><pre><code>1.对于int数组
+bool cmp(int a, int b)
+{
+    return a &gt; b;  //可以理解为当a&gt;b时把a放在b前面 
+}
+int main(){
+    int a[4]={3,1,4,2};
+    sort(a,a+4,cmp);
+    输出a数组；
+}
+输出：4,3,2,1
+
+2.对于char数组
+bool cmp(char a, char b)
+{   return a &gt; b;  //可以理解为当a&gt;b时把a放在b前面 }
+int main(){
+    char a[4]={'a','b','c','d'};
+    sort(a,a+4,cmp);
+    输出数组a；}
+输出：d,c,b,a
+
+3.对于结构体数组
+struct node｛
+    int x, y;
+}ssd[10];
+bool cmp(node a, node b)
+{    return a.x&gt;b.x;  }
+int main(){
+    ssd[0].x =2;ssd[0].y=2;
+    ssd[1].x =1;ssd[1].y=3;
+    ssd[2].x =3;ssd[2].y=1;
+    sort(ssd, ssd+3, cmp);
+    输出结构体数组的x成员；
+}
+输出：3,2,1</code></pre><hr>
+<hr>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+<th>写法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lower_bound</td>
+<td>寻找数组或容器中(first,last)范围内第一个值大于等于val的元素位置，如果是数组则返回该位置的指针，容器则返回该位置的迭代器</td>
+<td>lower_bound(first,last,val)</td>
+</tr>
+<tr>
+<td>upper_bound</td>
+<td>与上述相同，寻找<strong>大于</strong>的数</td>
+<td>upper_bound(first,last,val)</td>
+</tr>
+<tr>
+<td>count</td>
+<td>可计算出在(first，last)范围内val出现的次数；</td>
+<td>count(first,last,val)</td>
+</tr>
+<tr>
+<td>all_of</td>
+<td>所有数据都满足第三个参数所表示的函数则返回true，否则返回false；</td>
+<td>all_of(s,s+10,[](int i){return i&gt;0;})</td>
+</tr>
+<tr>
+<td>none_of</td>
+<td>与上述函数相反</td>
+<td>none_of(first,last,[](int i){return i&gt;0;})</td>
+</tr>
+<tr>
+<td>any_of</td>
+<td>在(开始，结束)这个范围，判断是否有一个元素满足fn函数；</td>
+<td>any_of(first,last,[](int i){return i&gt;0;})</td>
+</tr>
+<tr>
+<td>next_permutation</td>
+<td>求出全排列的下一个排列</td>
+<td>next_permutation(a,a+3);</td>
+</tr>
+<tr>
+<td>fill</td>
+<td>将数组前五位赋值位233</td>
+<td>fill(a,a+5,233)</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>将数组前五位排序</td>
+<td>升序:sort(a,a+4,less<int>());   降序:sort(a,a+5,greater<int>())</int></int></td>
+</tr>
+<tr>
+<td>equal</td>
+<td>判断两范围是否相等</td>
+<td>equal(a,a+10,s)</td>
+</tr>
+<tr>
+<td>find</td>
+<td>在范围内寻找val的位置</td>
+<td>find(first,last,val)</td>
+</tr>
+<tr>
+<td>find_if</td>
+<td>返回第一个值满足给定条件的元素指针</td>
+<td>find_if(s,s+5,[](int i){return i&gt;0;})</td>
+</tr>
+<tr>
+<td>find_if_not</td>
+<td>返回第一个不满足给定条件的元素指针</td>
+<td>与上同</td>
+</tr>
+</tbody></table>
+<hr>
+<hr>
+<h3 id="头文件-lt-cmath-gt"><a href="#头文件-lt-cmath-gt" class="headerlink" title="头文件<cmath>"></a><strong>头文件&lt;cmath&gt;</strong></h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hypot</td>
+<td>求三角形的斜边</td>
+<td>hypot(double x,double y)</td>
+</tr>
+</tbody></table>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -463,7 +685,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sakura-zs.github.io/gallery/index.html">https://sakura-zs.github.io/gallery/index.html</a>
+                    <a href="https://sakura-zs.github.io/posts/f6d.html">https://sakura-zs.github.io/posts/f6d.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -500,7 +722,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/C-%E5%87%BD%E6%95%B0/">
+                                    <span class="chip bg-color">C++函数</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -539,42 +765,49 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/gallery/index.html">
+                <a href="/posts/3b5f.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="gallery">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Android Studio关于控件的用法">
                         
-                        <span class="card-title">gallery</span>
+                        <span class="card-title">Android Studio关于控件的用法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            在学习Android开发过程中总结的一些常用控件，并不定期更新
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-27
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            ZS
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Android/" class="post-category">
+                                    Android
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Android-Studio/">
+                        <span class="chip bg-color">Android Studio</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -582,40 +815,47 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/gallery/index.html">
+                <a href="/posts/3561.html">
                     <div class="card-image">
                         
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="孤芳自赏">
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="gallery">
-                        
-                        <span class="card-title">gallery</span>
+                        <span class="card-title">孤芳自赏</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            成长的经历与故事，在往后有所回忆~
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-20
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            ZS
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%B8%AA%E4%BA%BA/" class="post-category">
+                                    个人
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%B8%AA%E4%BA%BA/">
+                        <span class="chip bg-color">个人</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
