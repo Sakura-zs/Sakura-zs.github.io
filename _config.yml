@@ -127,5 +127,5 @@ backup:
     message: Back up my blog 
     repository: 
       github: git@github.com:sakura-zs/sakura-zs.github.io.git,backup
-      gitee: git@gitee.com:brillanza/brillanza.git
+    #  gitee: git@gitee.com:brillanza/brillanza.git
 
