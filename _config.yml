@@ -126,6 +126,6 @@ backup:
     theme: hexo-theme-matery 
     message: Back up my blog 
     repository: 
-      github: git@github.com:sakura-zs/sakura-zs.github.io.git,backup
+      github: git@github.com:Sakura-zs/Sakura-zs.github.io.git,backup
       gitee: git@gitee.com:brillanza/brillanza.git,backup
 
