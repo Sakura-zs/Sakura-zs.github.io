@@ -29,31 +29,6 @@
     
     
     <entry>
-      <title>Android Studio关于控件的用法</title>
-      <link href="/posts/3b5f.html"/>
-      <url>/posts/3b5f.html</url>
-      
-        <content type="html"><![CDATA[<h3 id="Android-Studio"><a href="#Android-Studio" class="headerlink" title="Android Studio"></a>Android Studio</h3><h4 id="imageview控件"><a href="#imageview控件" class="headerlink" title="imageview控件"></a>imageview控件</h4><p>1.src属性:控件内填充图片，值可以为纯色或者drawable内图片<br>2.scaleType属性:控件填充模式：</p><blockquote><p>(1)fitxy:通过拉伸使图片充满控件<br>(2)fitCenter:保持宽高比缩放，直至能够完全显示<br>(3)centerCrop：保持宽高比缩放，直至完全覆盖控件，裁剪显示</p></blockquote><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> Android </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android Studio </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>C++函数</title>
       <link href="/posts/f6d.html"/>
       <url>/posts/f6d.html</url>
@@ -71,6 +46,31 @@
         <tags>
             
             <tag> C++函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Android Studio关于控件的用法</title>
+      <link href="/posts/3b5f.html"/>
+      <url>/posts/3b5f.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="Android-Studio"><a href="#Android-Studio" class="headerlink" title="Android Studio"></a>Android Studio</h3><h4 id="imageview控件"><a href="#imageview控件" class="headerlink" title="imageview控件"></a>imageview控件</h4><p>1.src属性:控件内填充图片，值可以为纯色或者drawable内图片<br>2.scaleType属性:控件填充模式：</p><blockquote><p>(1)fitxy:通过拉伸使图片充满控件<br>(2)fitCenter:保持宽高比缩放，直至能够完全显示<br>(3)centerCrop：保持宽高比缩放，直至完全覆盖控件，裁剪显示</p></blockquote><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android Studio </tag>
             
         </tags>
       
