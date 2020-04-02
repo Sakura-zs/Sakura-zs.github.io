@@ -420,7 +420,7 @@ abcfbc  abfcabprogramming  contes">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    740
+                    742
                 </div>
                 
 
@@ -448,7 +448,7 @@ abcfbc  abfcabprogramming  contes">
 <p>4<br>2<br>0   </p>
 </blockquote>
 <hr>
-<p>实例代码：</p>
+<p>示例代码：</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -482,9 +482,21 @@ abcfbc  abfcabprogramming  contes">
 <hr>
 <p>讲解：<br>1.</p>
 <blockquote>
-<p>设置maxlen数组来存放 <strong>s1以i-1为终点，s2以j-1为终点</strong> 的最长公共子序列的长度(maxlen[2][2]即表示s1[1]为终点，s2[1]为终点所对应的最长公共子序列的长度).<br>2.<br>由以上maxlen数组的定义可以看出来，maxlen[i][0]均为0，maxlen[0][j]均为0.<br>我们以此为初始条件进行下一步的递推.<br>3.<br>当s1[i-1]==s2[j-1]时，有maxlen[i][j]=maxlen[i-1][j-1]+1,这是易于理解的.<br>4.<br>当s1[i-1]!=s2[j-1]时，有maxlen[i][j]=max(maxlen[i-1][j],maxlen[i][j-1]);此处不易理解，作以下解释：   </p>
+<p>设置maxlen数组来存放 <strong>s1以i-1为终点，s2以j-1为终点</strong> 的最长公共子序列的长度(maxlen[2][2]即表示s1[1]为终点，s2[1]为终点所对应的最长公共子序列的长度).   </p>
+</blockquote>
+<p>2.</p>
 <blockquote>
-<p>1.举一个栗子：现在有<em>abccfc<em>与</em>abcfba<em>两个字符串，当我们求maxlen[4][4]时，也就是s1以f为终点，s2以b为终点的最长公共子序列的长度，很显然，f！=b，所以调用</em>maxlen[i][j]=max(maxlen[i-1][j],maxlen[i][j-1])</em><br>所以也就是求maxlen[3][4]与maxlen[4][3]的较大的那一个，而maxlen[4][3]为4，maxlen[3][4]为3，所以maxlen[4][4]为4.<br>2.更加浅显的想，maxlen[4][4]肯定不可能比maxlen[4][3]和maxlen[3][4]小，因为其中一个序列多了一个元素，自然不可能比短的串还要小.<br>而为什么不能都大于这两者呢？<br>我们分开来讨论，如果maxlen[4][4]&gt;maxlen[4][3]，那么相比之下s2中新增加的那个元素一定是在最长子序列中的，且处于末尾。<br>另外如果maxlen[4][4]也同时大于maxlen[3][4]，那么同理s1中新增加的那个元素一定在最长子序列中，且处于末尾。<br>继续想，如果maxlen[4][4]同时满足以上两个条件，那么，一定会有s1新增的元素与s2新增的元素相等，这就与前提条件 <em>s1[i-1]!=s2[j-1]</em> 不相符.</p>
+<p>由以上maxlen数组的定义可以看出来，maxlen[i][0]均为0，maxlen[0][j]均为0.<br>我们以此为初始条件进行下一步的递推.   </p>
+</blockquote>
+<p>3.</p>
+<blockquote>
+<p>当s1[i-1]==s2[j-1]时，有maxlen[i][j]=maxlen[i-1][j-1]+1,这是易于理解的.   </p>
+</blockquote>
+<p>4.</p>
+<blockquote>
+<p>当s1[i-1]!=s2[j-1]时，有maxlen[i][j]=max(maxlen[i-1][j],maxlen[i][j-1]);此处不易理解，作以下解释：   </p>
+<blockquote>
+<p><strong>1.举一个栗子：</strong> 现在有 <em>abccfc</em> 与 <em>abcfba</em> 两个字符串，当我们求maxlen[4][4]时，也就是s1以f为终点，s2以b为终点的最长公共子序列的长度，很显然，f！=b，所以调用<em>maxlen[i][j]=max(maxlen[i-1][j],maxlen[i][j-1])</em><br>所以也就是求maxlen[3][4]与maxlen[4][3]的较大的那一个，而maxlen[4][3]为4，maxlen[3][4]为3，所以maxlen[4][4]为4.<br><strong>2.更加浅显的想</strong> ：maxlen[4][4]肯定不可能比maxlen[4][3]和maxlen[3][4]小，因为其中一个序列多了一个元素，自然不可能比短的串还要小.<br><strong>那么为什么不能都大于这两者呢？</strong><br>我们分开来讨论，如果maxlen[4][4]&gt;maxlen[4][3]，那么相比之下s2中新增加的那个元素一定是在最长子序列中的，且处于末尾。<br>另外如果maxlen[4][4]也同时大于maxlen[3][4]，那么同理s1中新增加的那个元素一定在最长子序列中，且处于末尾。<br>继续想，如果maxlen[4][4]同时满足以上两个条件，那么，一定会有s1新增的元素与s2新增的元素相等，这就与前提条件 <em>s1[i-1]!=s2[j-1]</em> 不相符.</p>
 </blockquote>
 </blockquote>
 <p>最长公共子序列就完成啦！</p>
