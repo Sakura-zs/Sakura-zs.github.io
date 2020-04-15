@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="博客,移动开发,blog">
-    <meta name="description" content="似水流年|ZS blog">
+    <meta name="description" content="博客,移动开发,blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,6 +13,9 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
     <title>似水流年|ZS blog</title>
     <link rel="icon" type="image/png" href="/-wanjuxiong.png">
 
@@ -23,12 +26,11 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-    
+
     <script src="/libs/jquery/jquery.min.js"></script>
-    
+
 <meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 
 
 <body>
@@ -132,6 +134,7 @@
   </li>
 </ul>
 
+
 <div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
@@ -211,7 +214,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -230,6 +233,7 @@
         
     </ul>
 </div>
+
 
         </div>
 
@@ -271,7 +275,7 @@
     }
 
     .carousel-control:hover {
-        background-color:rgba(0, 0, 0, .4);
+        background-color: rgba(0, 0, 0, .4);
     }
 
     .carousel-control i {
@@ -335,7 +339,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getMinutes()%23 + '.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/5.jpg)');
 </script>
 
 
@@ -407,7 +411,8 @@
                                 
                             </div>
                             <div class="cover-btns">
-                                <a href="/posts/3561.html" class="waves-effect waves-light btn" target="_blank">
+                                <a href="/posts/3561.html" class="waves-effect waves-light btn"
+                                   target="_blank">
                                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                                 </a>
                             </div>
@@ -422,16 +427,37 @@
 <script>
     $(function () {
         let coverSlider = $('.carousel');
+
+        //用户触摸轮播自动 restartPlay 是否生效
+        let initUserPressedOrDraggedActive = false
+
+        //用户触摸轮播自动 restartPlay
+        function initUserPressedOrDragged(instance) {
+            setInterval(() => {
+                if (instance.pressed || instance.dragged) {
+                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
+                    restartPlay()
+                }
+            }, 1000)
+        }
+
         coverSlider.carousel({
             duration: Number('120'),
             fullWidth: true,
-            indicators: 'true' === 'true'
-        });
+            indicators: 'true' === 'true',
+            onCycleTo() {
+                if (!initUserPressedOrDraggedActive) {
+                    // console.log('initUserPressedOrDraggedActive')
+                    initUserPressedOrDragged(this)
+                    initUserPressedOrDraggedActive = true
+                }
+            },
+        })
 
         let carouselIntervalId;
         
 
-        let restartPlay = function () {
+        function restartPlay() {
             
         };
 
@@ -471,40 +497,49 @@
         </div>
     </div>
 </div>
+
                     
 
                     
-                        
+                        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
 
-<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+</style>
 <div class="music-player">
     
     <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s12">
-            <div id="aplayer" class="music"></div>
-        </div>
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="4956811324"
+                   fixed='false'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
     </div>
 </div>
 
 <script src="/libs/aplayer/APlayer.min.js"></script>
-<script>
-$(function () {
-    new APlayer({
-        container: document.getElementById('aplayer'),
-        fixed: 'false' === 'true',
-        autoplay: 'false' === 'true',
-        theme: '#542674',
-        loop: 'all',
-        order: 'list',
-        preload: 'auto',
-        volume: Number('0.7'),
-        listFolded: 'true' === 'true',
-        listMaxHeight: '100px',
-        audio: eval([{"name":"世间美好与你环环相扣","artist":"柏松","url":"http://music.163.com/song/media/outer/url?id=1363948882.mp3","cover":"http://p2.music.126.net/DK1_4sP_339o5rowMdPXdw==/109951164071024476.jpg?param=130y130"},{"name":"借我","artist":"谢春花","url":"http://music.163.com/song/media/outer/url?id=408814900.mp3","cover":"http://p1.music.126.net/Eg4cy0_HIF2nrX2gMCsWkQ==/17967119509636556.jpg?param=130y130"},{"name":"我曾","artist":"隔壁老樊","url":"http://music.163.com/song/media/outer/url?id=1336856777.mp3","cover":"http://p1.music.126.net/gNbAlXamNjhR2j3aOukNhg==/109951164232796511.jpg?param=130y130"},{"name":"你的答案","artist":"阿冗","url":"http://music.163.com/song/media/outer/url?id=1400256289.mp3","cover":"http://p1.music.126.net/OlX-4S4L0Hdkyy_DQ27zag==/109951164459621658.jpg?param=130y130"},{"name":"像我这样的人","artist":"毛不易","url":"http://music.163.com/song/media/outer/url?id=569213220.mp3","cover":"http://p2.music.126.net/vmCcDvD1H04e9gm97xsCqg==/109951163350929740.jpg?param=130y130"},{"name":"这一生关于你的风景","artist":"隔壁老樊","url":"http://music.163.com/song/media/outer/url?id=1356350562.mp3","cover":"http://p1.music.126.net/cPkQaIjsYNKqNUUSgnJztQ==/109951164096998306.jpg?param=130y130"},{"name":"麻雀","artist":"李荣浩","url":"http://music.163.com/song/media/outer/url?id=1407551413.mp3","cover":"http://p2.music.126.net/TzlSVBiNtpRD2b7MT2Hi-w==/109951164527590793.jpg?param=130y130"},{"name":"嚣张","artist":"en","url":"http://music.163.com/song/media/outer/url?id=1382596189.mp3","cover":"http://p1.music.126.net/NhkuFBphLFaSmYMeW1-frQ==/109951164271814514.jpg?param=130y130"},{"name":"句号","artist":"邓紫棋","url":"http://music.163.com/song/media/outer/url?id=1405283464.mp3","cover":"http://p1.music.126.net/KTo5oSxH3CPA5PBTeFKDyA==/109951164581432409.jpg?param=130y130"},{"name":"下山","artist":"要不要买菜","url":"http://music.163.com/song/media/outer/url?id=1404885266.mp3","cover":"http://p1.music.126.net/Aj4X1kpV-C2LLi-e_Xhgvg==/109951164499744148.jpg?param=130y130"},{"name":"左手指月","artist":"萨顶顶","url":"http://music.163.com/song/media/outer/url?id=536096151.mp3","cover":"http://p2.music.126.net/gEia-o05FSas8uJos54Sug==/109951163456726954.jpg?param=130y130"},{"name":"生而为人","artist":"尚士达","url":"http://music.163.com/song/media/outer/url?id=1335350269.mp3","cover":"http://p2.music.126.net/dgPK-FDvF92suiQmnl5kCg==/109951163745432466.jpg?param=130y130"}])
-    });
-});
-</script>
-                    
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+                        
 
                     
 
@@ -553,8 +588,6 @@ $(function () {
             </div>
         </div>
     </div>
-    
-
     
 
     
@@ -1012,6 +1045,7 @@ abcfbc  abfcabprogramming  contes
 
 
     <footer class="page-footer bg-color">
+    
     <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
@@ -1075,11 +1109,11 @@ abcfbc  abfcabprogramming  contes
                         diffMinutes * minutes) / seconds);
                     if (startYear == todayYear) {
                         document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                        document.getElementById("sitetime").innerHTML = "本小站存活了 " + diffDays + " 天 " + diffHours +
                             " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
                     } else {
                         document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                        document.getElementById("sitetime").innerHTML = "本小站存活了 " + diffYears + " 年 " + diffDays +
                             " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
                     }
                 }
@@ -1146,9 +1180,10 @@ abcfbc  abfcabprogramming  contes
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
 });
 </script>
+
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
@@ -1163,9 +1198,6 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
 
     <!-- Baidu Analytics -->
 
@@ -1211,7 +1243,7 @@ $(function () {
     
 
     
-    
+
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
@@ -1219,4 +1251,3 @@ $(function () {
 </body>
 
 </html>
-<!--动态线条背景 <script type="text/javascript" color="122 103 238" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"> </script> -->
