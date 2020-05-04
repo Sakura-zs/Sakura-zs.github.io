@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="标签: 排序, 博客,移动开发,blog">
-    <meta name="description" content="博客,移动开发,blog">
+    <meta name="description" content="标签: 排序 | 似水流年|ZS blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,9 +13,6 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
     <title>标签: 排序 | 似水流年|ZS blog</title>
     <link rel="icon" type="image/png" href="/-wanjuxiong.png">
 
@@ -26,11 +23,12 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    
     <script src="/libs/jquery/jquery.min.js"></script>
-
+    
 <meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 
 
 <body>
@@ -134,7 +132,6 @@
   </li>
 </ul>
 
-
 <div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
@@ -214,7 +211,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			留言板
+			Contact
 		</a>
           
         </li>
@@ -233,7 +230,6 @@
         
     </ul>
 </div>
-
 
         </div>
 
@@ -285,7 +281,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/2.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getMinutes()%23 + '.jpg)');
 </script>
 
 
@@ -305,38 +301,11 @@
             <div class="tag-chips">
                 
                 
-                <a href="/tags/Android-Studio/" title="Android Studio: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Android Studio" style="background-color: #F9EBEA;">Android Studio
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/markdown%E8%AF%AD%E6%B3%95/" title="markdown语法: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="markdown语法" style="background-color: #F5EEF8;">markdown语法
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/%E4%B8%AA%E4%BA%BA/" title="个人: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="个人" style="background-color: #D5F5E3;">个人
+                            data-tagname="个人" style="background-color: #F9EBEA;">个人
                         <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/C-%E5%87%BD%E6%95%B0/" title="C++函数: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="C++函数" style="background-color: #E8F8F5;">C++函数
-                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -344,7 +313,7 @@
                 <a href="/tags/Java/" title="Java: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Java" style="background-color: #FEF9E7;">Java
+                            data-tagname="Java" style="background-color: #F5EEF8;">Java
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -353,7 +322,25 @@
                 <a href="/tags/Intellij-IDEA/" title="Intellij IDEA: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Intellij IDEA" style="background-color: #F8F9F9;">Intellij IDEA
+                            data-tagname="Intellij IDEA" style="background-color: #D5F5E3;">Intellij IDEA
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Android-Studio/" title="Android Studio: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Android Studio" style="background-color: #E8F8F5;">Android Studio
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/markdown%E8%AF%AD%E6%B3%95/" title="markdown语法: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="markdown语法" style="background-color: #FEF9E7;">markdown语法
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -362,8 +349,17 @@
                 <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="动态规划" style="background-color: #82E0AA;">动态规划
+                            data-tagname="动态规划" style="background-color: #F8F9F9;">动态规划
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/C-%E5%87%BD%E6%95%B0/" title="C++函数: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="C++函数" style="background-color: #82E0AA;">C++函数
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -426,7 +422,6 @@
 
 
     <footer class="page-footer bg-color">
-    
     <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
@@ -490,11 +485,11 @@
                         diffMinutes * minutes) / seconds);
                     if (startYear == todayYear) {
                         document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本小站存活了 " + diffDays + " 天 " + diffHours +
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
                             " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
                     } else {
                         document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本小站存活了 " + diffYears + " 年 " + diffDays +
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
                             " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
                     }
                 }
@@ -561,10 +556,9 @@
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
-
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
@@ -579,6 +573,9 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
 
     <!-- Baidu Analytics -->
 
@@ -624,7 +621,7 @@ $(function () {
     
 
     
-
+    
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
@@ -632,3 +629,4 @@ $(function () {
 </body>
 
 </html>
+<!--动态线条背景 <script type="text/javascript" color="122 103 238" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"> </script> -->

@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="关于Intellij IDEA可运行但出现警告的解决方法, 博客,移动开发,blog">
-    <meta name="description" content="博客,移动开发,blog">
+    <meta name="description" content="初学Java时出现的莫名其妙的警告问题及编译时出现“main mathod is not found in class”错误的解决方案">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,9 +13,6 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
     <title>关于Intellij IDEA可运行但出现警告的解决方法 | 似水流年|ZS blog</title>
     <link rel="icon" type="image/png" href="/-wanjuxiong.png">
 
@@ -26,11 +23,12 @@
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
-
+    
     <script src="/libs/jquery/jquery.min.js"></script>
-
+    
 <meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 
 
 <body>
@@ -134,7 +132,6 @@
   </li>
 </ul>
 
-
 <div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
@@ -214,7 +211,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			留言板
+			Contact
 		</a>
           
         </li>
@@ -233,7 +230,6 @@
         
     </ul>
 </div>
-
 
         </div>
 
@@ -341,23 +337,15 @@
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
-
-        position: absolute;
-        right: 23.5vw;
-        display: block;
     }
-
-    /*.toc-fixed .toc-link::before{
-        position: fixed!important; 当toc的位置改为fixed时，.toc-link::before也要改为fixed
-    }*/
 
     #toc-content .is-active-link {
         color: #42b983;
     }
 
-    /*#toc-content .is-active-link::before {
+    #toc-content .is-active-link::before {
         background-color: #42b983;
-    }*/
+    }
 
     #floating-toc-btn {
         position: fixed;
@@ -437,12 +425,7 @@
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
-                </div>
-                
-
+				
                 
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
                         <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
@@ -450,6 +433,7 @@
                     </div>
 				
             </div>
+            
         </div>
         <hr class="clearfix">
         <div class="card-content article-card-content">
@@ -555,10 +539,11 @@
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
                     <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-<div id="article-share">
 
+<div id="article-share">
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    
+    <div class="social-share" data-sites="google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/libs/share/js/social-share.min.js"></script>
     
 
@@ -818,7 +803,7 @@
 </style>
 
 <div class="card valine-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
         <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
         <span>评论</span>
     </div>
@@ -842,8 +827,6 @@
         placeholder: '小主儿快来宠幸人家呀~~'
     });
 </script>
-
-    
 
     
 
@@ -999,7 +982,7 @@
 
 <script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
-
+    
 <!-- 代码块复制 -->
 
 <script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
@@ -1015,7 +998,6 @@
 <style type="text/css">
 code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
 </style>
-
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
@@ -1117,9 +1099,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-
     <footer class="page-footer bg-color">
-    
     <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
@@ -1183,11 +1163,11 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                         diffMinutes * minutes) / seconds);
                     if (startYear == todayYear) {
                         document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本小站存活了 " + diffDays + " 天 " + diffHours +
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
                             " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
                     } else {
                         document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本小站存活了 " + diffYears + " 年 " + diffDays +
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
                             " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
                     }
                 }
@@ -1254,10 +1234,9 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
-
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
@@ -1272,6 +1251,9 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
 
     <!-- Baidu Analytics -->
 
@@ -1317,7 +1299,7 @@ $(function () {
     
 
     
-
+    
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
@@ -1325,3 +1307,4 @@ $(function () {
 </body>
 
 </html>
+<!--动态线条背景 <script type="text/javascript" color="122 103 238" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"> </script> -->
