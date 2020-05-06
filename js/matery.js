@@ -167,7 +167,7 @@ $(function () {
             }
     });
 });
-var title2="msg=KZblog又有新评论啦~！--by Valine\n"
+var title2="msg=ZSblog又有新评论啦~！--by Valine\n"
 var SCKEY_Qmsg="https://qmsg.zendee.cn:443/send/512607f8e55eea7dbbf735b2de3d2d7e.html"
 var ValineButton=document.getElementsByClassName("vsubmit vbtn")[0];
 function send_valine_Qmsg(){
@@ -186,25 +186,4 @@ function send_valine_Qmsg(){
     httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
     httpRequest.send(title2+data);//发送请求 将情头体写在send中
 };
-ValineButton.onclick=send_valine_Qmsg;
-var title1="text=KZblog又有新评论啦~！--by Valine"
-var SCKEY_Server="SCU96675T8111f27327c973513f6d2224d4ffac0b5eb22f44e68d9"
-var ValineButton=document.getElementsByClassName("vsubmit vbtn")[0];
-function send_valine_Server(){
-    var text="desp=";
-    var pagename=document.title;
-    var wz=pagename.indexOf('|');
-    var res=pagename.substring(0,wz);
-    var pageurl=document.URL;
-    var ptime=new Date();
-    var vnick=document.getElementsByClassName("vnick vinput")[0].value;
-    var vmail=document.getElementsByClassName("vmail vinput")[0].value;
-    var vlink=document.getElementsByClassName("vlink vinput")[0].value;
-    var veditor=document.getElementsByClassName("veditor vinput")[0].value;
-    var data=text+"|昵称："+"|邮箱："+"|网站地址："+"|当前页面："+"|评论内容："+"|跳转链接："+"|评论时间"+"\n"+"|----|----|----|----|"+"\n"+"|   "+vnick+"   |   "+vmail+"  |  "+vlink+"|   "+res+"| "+veditor+"| "+pageurl+"|" +ptime.toLocaleString()+"|";
-    var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
-    httpRequest.open('POST', 'https://sc.ftqq.com/'+SCKEY_Server+'.send', true); //第二步：打开连接
-    httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
-    httpRequest.send(title1+"&"+data);//发送请求 将情头体写在send中
-};
-ValineButton.onclick=send_valine_Server;
+
