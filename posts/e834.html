@@ -21,48 +21,66 @@
 <li><p>在执行 “git submodule update –init” 时，命令行卡在 “正克隆到…” 很长时间，这时将进程停止，文件中有克隆的文件夹，但为空，此时执行后面的命令，当cmake出现错误时，将空文件夹删掉，再进行 “git submodule update –init” 即可克隆文件。   </p>
 </li>
 <li><p>下载模型和pytorch时，可进行换源后下载，在 “/jetson-inference/tools” 下执行如下命令：   </p>
-<blockquote>
-<p>$sed -in-place -e ‘s@<a href="https://nvidia.box.com/shared/static@https://bbs.gpuworld.cn/mirror@g'" target="_blank" rel="noopener">https://nvidia.box.com/shared/static@https://bbs.gpuworld.cn/mirror@g'</a> download-models.sh<br>安装pytorch换源：<br>$sed -in-place -e ‘s@<a href="https://nvidia.box.com/shared/static@https://bbs.gpuworld.cn/mirror@g'" target="_blank" rel="noopener">https://nvidia.box.com/shared/static@https://bbs.gpuworld.cn/mirror@g'</a> install-pytorch.sh<br>$sed -in-place -e ‘s@<a href="https://github.com/pytorch/vision@https://gitee.com/vcan123/pytorch@g'" target="_blank" rel="noopener">https://github.com/pytorch/vision@https://gitee.com/vcan123/pytorch@g'</a> install-pytorch.sh<br>$sed -in-place -e ‘s@<a href="https://github.com/dusty-nv/vision@https://gitee.com/vcan123/dusty-nv@g'" target="_blank" rel="noopener">https://github.com/dusty-nv/vision@https://gitee.com/vcan123/dusty-nv@g'</a> install-pytorch.sh   </p>
-</blockquote>
-</li>
-<li><p>pytorch也可以下载好.whl文件使用 “sudo pip3 install torch-1.6.0-cp36-cp36m-linux_aarch64.whl” 进行安装   </p>
-</li>
-<li><p>此处记录下整个过程需要的命令：   </p>
-<pre class="line-numbers language-cpp"><code class="language-cpp">sudo apt<span class="token operator">-</span>get update
-sudo apt<span class="token operator">-</span>get install git cmake libpython3<span class="token operator">-</span>dev python3<span class="token operator">-</span>numpy
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 </ol>
-<p>mkdir workspace<br>cd workspace</p>
-<p>git clone <a href="https://github.com/dusty-nv/jetson-inference" target="_blank" rel="noopener">https://github.com/dusty-nv/jetson-inference</a>  //可替换为自己在gitee的仓库<br>cd jetson-inference<br>git submodule update –init</p>
-<p>mkdir build            //创建编译文件夹<br>cd data/networks       //此处进行下载模型，也可下载好模型在此处解压，文末会放置中国镜像</p>
-<p>/*<br>for tar in *.tar.gz;  do tar -zxvf $tar; done          //批量解压命令<br>sudo rm -R *.tar.gz                //删除所有压缩包<br>*/</p>
-<p>sudo vim CMakePreBuild.sh             //在其中进行注释和换源下载模型和pytorch的命令</p>
-<p>sudo pip3 install torch-1.6.0-cp36-cp36m-linux_aarch64.whl      //在所在文件夹下进行安装pytorch</p>
-<p>cd build<br>cmake ../<br>make<br>sudo make install </p>
-<pre><code>
+<pre class="line-numbers language-cpp"><code class="language-cpp">$sed <span class="token operator">-</span>in<span class="token operator">-</span>place <span class="token operator">-</span>e <span class="token string">'s@https://nvidia.box.com/shared/static@https://bbs.gpuworld.cn/mirror@g'</span> download<span class="token operator">-</span>models<span class="token punctuation">.</span>sh   
+安装pytorch换源：   
+$sed <span class="token operator">-</span>in<span class="token operator">-</span>place <span class="token operator">-</span>e <span class="token string">'s@https://nvidia.box.com/shared/static@https://bbs.gpuworld.cn/mirror@g'</span> install<span class="token operator">-</span>pytorch<span class="token punctuation">.</span>sh   
+$sed <span class="token operator">-</span>in<span class="token operator">-</span>place <span class="token operator">-</span>e <span class="token string">'s@https://github.com/pytorch/vision@https://gitee.com/vcan123/pytorch@g'</span> install<span class="token operator">-</span>pytorch<span class="token punctuation">.</span>sh   
+$sed <span class="token operator">-</span>in<span class="token operator">-</span>place <span class="token operator">-</span>e <span class="token string">'s@https://github.com/dusty-nv/vision@https://gitee.com/vcan123/dusty-nv@g'</span> install<span class="token operator">-</span>pytorch<span class="token punctuation">.</span>sh   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="4">
+<li>pytorch也可以下载好.whl文件使用 “sudo pip3 install torch-1.6.0-cp36-cp36m-linux_aarch64.whl” 进行安装   </li>
+<li>此处记录下整个过程需要的命令：   </li>
+</ol>
+<pre class="line-numbers language-cpp"><code class="language-cpp">sudo apt<span class="token operator">-</span>get update
+sudo apt<span class="token operator">-</span>get install git cmake libpython3<span class="token operator">-</span>dev python3<span class="token operator">-</span>numpy   
 
-这时将完成所有工作   
-&gt; cd build/aarch64/bin
+mkdir workspace
+cd workspace
 
-进行测试：   
-```cpp
-./imagenet-console images/orange_0.jpg output_0.jpg    //使用图片进行测试，完成后在同级目录生成一张 output_0.jpg 的图片
+git clone https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>dusty<span class="token operator">-</span>nv<span class="token operator">/</span>jetson<span class="token operator">-</span>inference  <span class="token comment" spellcheck="true">//可替换为自己在gitee的仓库</span>
+cd jetson<span class="token operator">-</span>inference
+git submodule update <span class="token operator">--</span>init
+
+mkdir build            <span class="token comment" spellcheck="true">//创建编译文件夹</span>
+cd data<span class="token operator">/</span>networks       <span class="token comment" spellcheck="true">//此处进行下载模型，也可下载好模型在此处解压，文末会放置中国镜像</span>
+
+<span class="token comment" spellcheck="true">/*
+for tar in *.tar.gz;  do tar -zxvf $tar; done          //批量解压命令
+sudo rm -R *.tar.gz                //删除所有压缩包
+*/</span>
+
+sudo vim CMakePreBuild<span class="token punctuation">.</span>sh             <span class="token comment" spellcheck="true">//在其中进行注释和换源下载模型和pytorch的命令</span>
+
+sudo pip3 install torch<span class="token number">-1.6</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">-</span>cp36<span class="token operator">-</span>cp36m<span class="token operator">-</span>linux_aarch64<span class="token punctuation">.</span>whl      <span class="token comment" spellcheck="true">//在所在文件夹下进行安装pytorch</span>
+
+cd build
+cmake <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">/</span>
+make
+sudo make install <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这时将完成所有工作   </p>
+<blockquote>
+<p>cd build/aarch64/bin</p>
+</blockquote>
+<p>进行测试： </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token punctuation">.</span><span class="token operator">/</span>imagenet<span class="token operator">-</span>console images<span class="token operator">/</span>orange_0<span class="token punctuation">.</span>jpg output_0<span class="token punctuation">.</span>jpg    <span class="token comment" spellcheck="true">//使用图片进行测试，完成后在同级目录生成一张 output_0.jpg 的图片</span>
 
 
-$ ./imagenet-camera googlenet       //USB      
-$ ./imagenet-camera alexnet         //CSI
+$ <span class="token punctuation">.</span><span class="token operator">/</span>imagenet<span class="token operator">-</span>camera googlenet       <span class="token comment" spellcheck="true">//USB      </span>
+$ <span class="token punctuation">.</span><span class="token operator">/</span>imagenet<span class="token operator">-</span>camera alexnet         <span class="token comment" spellcheck="true">//CSI</span>
 
 
-//未经验证
-[Camera 对象识别]
-$./detectnet-camera.py                             # using SSD-Mobilenet-v2, default MIPI CSI camera (1280x720)
-$./detectnet-camera.py --network=ssd-inception-v2  # using SSD-Inception-v2, default MIPI CSI camera (1280x720)
-$./detectnet-camera.py --camera=/dev/video0        # using SSD-Mobilenet-v2, V4L2 camera /dev/video0 (1280x720)
-$./detectnet-camera.py --width=640 --height=480    # using SSD-Mobilenet-v2, default MIPI CSI camera (640x480)
-</code></pre><ol start="6">
+<span class="token comment" spellcheck="true">//未经验证</span>
+<span class="token punctuation">[</span>Camera 对象识别<span class="token punctuation">]</span>
+$<span class="token punctuation">.</span><span class="token operator">/</span>detectnet<span class="token operator">-</span>camera<span class="token punctuation">.</span>py                             # <span class="token keyword">using</span> SSD<span class="token operator">-</span>Mobilenet<span class="token operator">-</span>v2<span class="token punctuation">,</span> <span class="token keyword">default</span> MIPI CSI <span class="token function">camera</span> <span class="token punctuation">(</span>1280x720<span class="token punctuation">)</span>
+$<span class="token punctuation">.</span><span class="token operator">/</span>detectnet<span class="token operator">-</span>camera<span class="token punctuation">.</span>py <span class="token operator">--</span>network<span class="token operator">=</span>ssd<span class="token operator">-</span>inception<span class="token operator">-</span>v2  # <span class="token keyword">using</span> SSD<span class="token operator">-</span>Inception<span class="token operator">-</span>v2<span class="token punctuation">,</span> <span class="token keyword">default</span> MIPI CSI <span class="token function">camera</span> <span class="token punctuation">(</span>1280x720<span class="token punctuation">)</span>
+$<span class="token punctuation">.</span><span class="token operator">/</span>detectnet<span class="token operator">-</span>camera<span class="token punctuation">.</span>py <span class="token operator">--</span>camera<span class="token operator">=</span><span class="token operator">/</span>dev<span class="token operator">/</span>video0        # <span class="token keyword">using</span> SSD<span class="token operator">-</span>Mobilenet<span class="token operator">-</span>v2<span class="token punctuation">,</span> V4L2 camera <span class="token operator">/</span>dev<span class="token operator">/</span><span class="token function">video0</span> <span class="token punctuation">(</span>1280x720<span class="token punctuation">)</span>
+$<span class="token punctuation">.</span><span class="token operator">/</span>detectnet<span class="token operator">-</span>camera<span class="token punctuation">.</span>py <span class="token operator">--</span>width<span class="token operator">=</span><span class="token number">640</span> <span class="token operator">--</span>height<span class="token operator">=</span><span class="token number">480</span>    # <span class="token keyword">using</span> SSD<span class="token operator">-</span>Mobilenet<span class="token operator">-</span>v2<span class="token punctuation">,</span> <span class="token keyword">default</span> MIPI CSI <span class="token function">camera</span> <span class="token punctuation">(</span>640x480<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="6">
 <li>执行 <em>ls /dev/video</em> 来看摄像头是否存在</li>
-<li>模型下载镜像：<pre class="line-numbers language-cpp"><code class="language-cpp"># 使用wget下载各个模型，可根据实际需要下载
+<li>模型下载镜像：  </li>
+</ol>
+<pre class="line-numbers language-cpp"><code class="language-cpp"># 使用wget下载各个模型，可根据实际需要下载
 wget https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>dusty<span class="token operator">-</span>nv<span class="token operator">/</span>jetson<span class="token operator">-</span>inference<span class="token operator">/</span>releases<span class="token operator">/</span>download<span class="token operator">/</span>model<span class="token operator">-</span>mirror<span class="token number">-190618</span><span class="token operator">/</span>AlexNet<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz
 wget https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>dusty<span class="token operator">-</span>nv<span class="token operator">/</span>jetson<span class="token operator">-</span>inference<span class="token operator">/</span>releases<span class="token operator">/</span>download<span class="token operator">/</span>model<span class="token operator">-</span>mirror<span class="token number">-190618</span><span class="token operator">/</span>Deep<span class="token operator">-</span>Homography<span class="token operator">-</span>COCO<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz
 wget https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>dusty<span class="token operator">-</span>nv<span class="token operator">/</span>jetson<span class="token operator">-</span>inference<span class="token operator">/</span>releases<span class="token operator">/</span>download<span class="token operator">/</span>model<span class="token operator">-</span>mirror<span class="token number">-190618</span><span class="token operator">/</span>DetectNet<span class="token operator">-</span>COCO<span class="token operator">-</span>Airplane<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz
@@ -103,8 +121,6 @@ wget https<span class="token operator">:</span><span class="token operator">/</s
 wget https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>dusty<span class="token operator">-</span>nv<span class="token operator">/</span>jetson<span class="token operator">-</span>inference<span class="token operator">/</span>releases<span class="token operator">/</span>download<span class="token operator">/</span>model<span class="token operator">-</span>mirror<span class="token number">-190618</span><span class="token operator">/</span>Super<span class="token operator">-</span>Resolution<span class="token operator">-</span>BSD500<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz
 wget https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>dusty<span class="token operator">-</span>nv<span class="token operator">/</span>jetson<span class="token operator">-</span>inference<span class="token operator">/</span>releases<span class="token operator">/</span>download<span class="token operator">/</span>model<span class="token operator">-</span>mirror<span class="token number">-190618</span><span class="token operator">/</span>VGG<span class="token number">-16</span><span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz
 wget https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>dusty<span class="token operator">-</span>nv<span class="token operator">/</span>jetson<span class="token operator">-</span>inference<span class="token operator">/</span>releases<span class="token operator">/</span>download<span class="token operator">/</span>model<span class="token operator">-</span>mirror<span class="token number">-190618</span><span class="token operator">/</span>VGG<span class="token number">-19</span><span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
 <hr>
 <h1 id="至此结束"><a href="#至此结束" class="headerlink" title="至此结束"></a>至此结束</h1><p>最后贴一下参考的<a href="https://blog.csdn.net/baidu_26678247/article/details/109025873" target="_blank" rel="noopener">详细教程</a>!</p>
 <script>
